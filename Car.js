@@ -1,26 +1,30 @@
-class Car {
+
+
+ class Car {
 	
 	constructor(model,color,speed,gear) {
         this.model = model;
         this.color = color;
         this.speed = speed;
+		this.gear = gear;
         
 
     }
 	getColor() { return this.color;}
 	getSpeed() {return this.speed;}
 	getGear() {return this.gear;}
-	setSpeed(num){ if (num <0) { return "speed is invalid" } else {this.speed = num; return "speed is valid"}}
+	setSpeed(num){ if (num < 0) { this.speed = 0; return "speed is invalid" } else {this.speed = num; return "speed is valid"}}
 	setColor(color) {this.color = color;}
 	accelerate(num) {this.speed += num;}
-	reduceSpeed(num) {speed-=num;
-	if(speed==0) {return "Car stopped"} else if(speed<0) {return "Car might tumble"} else { return "Car slowed down"} }
+	reduceSpeed(num) { if(num <0) { return "invalid input"} else { this.speed -=num;
+	if(this.speed==0) {return "Car stopped"} else { if(this.speed<0) { this.speed = 0; return "Car might tumble!"} else {return "Car slowed down"} } }}
 	getModel() {return this.model}
 	applyBrake() {this.speed=0; return this.speed + " car stopped!"}
 	isMoving() { if(this.speed>0) {return true} else {return  false} }
 }
 
 class mercedes extends Car {
+	
 	setSpeed(num) {
 		super.setSpeed(num);
 		if(this.speed >100) {return "mercedes warns user: please tighten your seatbelt: safety first"
@@ -31,8 +35,8 @@ class mercedes extends Car {
 
 class toyota extends Car{
 	setSpeed(num) {
-		super.setSpeed();
-	if(this.speed>0) {return "toyota radio is on, antenna goes up"}else if(speed>150) {return "warning on toyota dash board,please reduce speed"} }
+		super.setSpeed(num);
+	if(this.speed>100) {return "warning on toyota dash board,please reduce speed"}else {return "toyota radio is on, antenna goes up"} }
 		getModel() {  return " TOYOTA  " +  super.getModel() }
 }
 
@@ -41,6 +45,7 @@ class jeep extends Car{
 	super(model,color,speed,gear) ;
 	this.wheelDrive = wheelDrive;
 	}
+	    getwheelDrive() { return this.wheelDrive; }
 		getModel() {return "JEEP " + super.getModel() + " with " + this.wheelDrive}
 	
 }
@@ -61,7 +66,9 @@ class volkswagen extends Car{
  console.log(car.getModel());   //testing fields in car
  console.log(car.getColor());
  console.log(car.getSpeed());
- 
+ console.log(car instanceof Car)
+ console.log(car.color)
+ let beetle = new volkswagen("Volks1995 model", "black",2,3,2);
  console.log(car.accelerate(20));
  console.log(car.getSpeed());   //testing car behaviour / speed increased from 10 to 30
  console.log(car.setSpeed(200)) // testing for deep behaviour
@@ -74,3 +81,12 @@ class volkswagen extends Car{
  console.log(vboot.getModel())   // querying vboot for its name
  console.log(vboot.applyBrake());
  console.log(vboot.isMoving()) // checking if vboot is still moving after applying brake
+ console.log(car.setColor())
+ mercedes.color = "blue"
+ mercedes.model ="V50"
+console.log(beetle.getModel());
+console.log(camry.setSpeed(100));
+console.log(camry.getSpeed());
+
+
+module.exports = {Car, mercedes, toyota, jeep, volkswagen }
