@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type = "text/css">
+input { 
+    margin-top: 12px;
+    border-radius: 12px;
+    width: auto;
+     
+}
+
+    
+}
+#select1 {
+    margin-top : 12px
+}
+
+#mysubmit {
+    text-align: left;
+    padding: 12px;
+    margin-left: 150px;
+    border-color:blue;
+    width:60%;
+    color:whitesmoke;
+    
+    }
+label {
+    float: left;
+    width: 150px;
+    text-align: center;
+    padding-right: 12px;
+    margin-top: 12px;
+    clear: left;
+    color: darkorange;
+    font-family :Arial, Helvetica, sans-serif;
+    
+}
+
+#myform {
+    border-radius: 12px;
+    border: chocolate solid 4px;
+    width: 45%;
+    background-color: black;
+}
+
+#nav1 {
+    color:black;
+    background-color: greenyellow;
+}
+
+#top {
+    border: 2px, solid, black;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(white));
+    background-image: -webkit-linear-gradient(top, black, white);
+    background-image: -moz-linear-gradient(top, black, white);
+    background-image: linear-gradient(to bottom, black, white);
+    color: orangered;
+    font-style: italic;
+    text-align: center;
+    
+}
+#body1 {
+    background-image: url(picsign1.png);
+
+}
+</style>
+</head>
+<body id = "body1">
+<div>
+<div id = "top">
+<div><h1> Welcome to HelloBooks! </h1> </div> 
+<hr>
+
+<div><h2> Reading Brings Motivation And Motivation Brings Exploits!! </h2></div>
+</div>
+
+
+<form id = "myform">
+<div id = "nav1"><h2>Login Page:</h2></div>
+
+<div>
+<label for "Username">Username:</label>
+<input type= "text" name = "Username" autocomplete= "on"  required>
+</div>
+
+<div>
+<label for "Password">Password:</label>
+<input type = "password" name = "password"  required> 
+</div>
+
+<div>
+<label for "Sign in as:">Sign in as:</label> 
+<div id = "select1"> <br>
+<select access = "owner">
+    <option value = "user" selected>User</option>
+    <option value = "admin">Admin</option>
+</select>
+</div>
+</div>
+
+<div id = "mysubmit">
+ <input type = "submit" value = "Submit">
+  &nbsp Are you new? &nbsp; <a href = "#">Sign up!</a></div>
+ 
+</form>
+<br><br>
+<p> &copy 2017 hellobooks project</p>
+<hr>
+</div>
+</body>
+</html>
